@@ -2,7 +2,7 @@
 # ..............job branch....................
 
 from flask import Flask , render_template,request,jsonify
-import pickle
+from joblib import dump,load
 import numpy 
 import warnings
 warnings.filterwarnings('ignore')
@@ -13,7 +13,9 @@ warnings.filterwarnings('ignore')
 # mydb=client['Bikeproject']  # create the database for the project
 # colle=mydb['bike_data']      # collection create
 
-model=pickle.load(open('bike_price_prediction.pkl','rb'))
+# model=pickle.load(open('bike_price_prediction.pkl','rb'))
+
+model = load('rf_model.lb')
 application = Flask(__name__)
 app = application
 
@@ -73,7 +75,7 @@ def predict():
 
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0")
+    app.run(host="0.0.0.0",port=8080)
 
 
 
