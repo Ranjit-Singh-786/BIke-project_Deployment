@@ -1,6 +1,3 @@
-
-# ..............job branch....................
-
 from flask import Flask , render_template,request,jsonify
 from joblib import dump,load
 import numpy 
@@ -15,7 +12,7 @@ warnings.filterwarnings('ignore')
 
 # model=pickle.load(open('bike_price_prediction.pkl','rb'))
 
-model = load('rf_model.lb')
+model = load('updated_model.lb')
 application = Flask(__name__)
 app = application
 

@@ -1,15 +1,65 @@
-sudo apt install python3
 
-python3
-
-sudo apt-get update && sudo apt-get install python3-pip
-
-pip3 install -r requirements.txt
-
-screen -R deploy python3 application.py        <--- to hold the execution
 
 host :- "0.0.0.0"
 port :- 8080
 
-pip install scikit-learn==0.24.2
+
+#usefull linux commands
+sudo apt-get update && sudo apt-get install python3-pip
+sudo apt install docker.io    <--- to install docker
+sudo -i     <---- to switch into root user
+screen -R deploy python3 application.py        <--- to hold the execution
+sudo apt install python3-pip        <---- To install pip
+
+
+# Deploy on EC2 instance
+ssh-keygen   <-- to generate ssh key in ec2 instance
+cd .ssh       <--- Go inside the hidden ssh folder
+cat ***.pub    <--- public key and copy from instance
+add ssh key on github
+clone the github code on ec2 using >> git clone paste_url
+pip install -r requirements.txt     <--- to install requirements
+if pip is not available -->>use this ( sudo apt install python3-pip )  or (sudo apt-get update && sudo apt-get install python3-pip)
+then execute python3 app.py              
+screen -R deploy python3 application.py        <--- to hold the execution
+MAKE SURE ALL TRAFFIC ALLOW ON INSTANCE.
+
+
+
+### command and steps to deploy using docker
+
+sudo apt install docker.io      <--- to install docker
+Dockerfile creating and writing instruction   <-- you can copy Dockerfile code from dockerhub.
+docker build -t imagname .
+docker run -d -p 1122:8080 imagname       <--  command
+paste the host:port on chrome to access the application
+
+
+## To install mysql on EC2 with ubuntu
+sudo apt install mysql-server      <---- To install 
+sudo mysql    <--- Start the mysql terminal
+
+
+###  Deployment using cicd pipeline
+
+1. launch EBS with python platform enviroment.
+2. configure the codepipeline with EBS and Github.
+3. Set the .ebextensions/pytohn.config
+4. Deploy your file.
+
+
+### Deployment Directly through EC2
+
+1. launch EC2 instance
+2. generate ssh-keygen key
+3. set inside the github
+4. clone the github code on ec2 instance.
+5. install python requirements.txt   <-- pip install -r requirements.txt
+6. Run the pytho file,
+
+
+
+
+
+
 
