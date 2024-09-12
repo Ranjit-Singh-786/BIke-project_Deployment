@@ -12,6 +12,7 @@ screen -R deploy python3 application.py        <--- to hold the execution
 sudo apt install python3-pip        <---- To install pip
 
 
+
 # Deploy on EC2 instance
 ssh-keygen   <-- to generate ssh key in ec2 instance
 cd .ssh       <--- Go inside the hidden ssh folder
@@ -58,7 +59,21 @@ sudo mysql    <--- Start the mysql terminal
 6. Run the pytho file,
 
 
+## EXECUTED COMMANDS IN CLASS 
+sudo apt update 
+sudo apt upgrade
+sudo apt install python3-pip
+sudo -i   # switched into root user   
+git clone repo_url
+cd Bike_project 
+try apt install python3-xyz  # where xyz is your module name 
+python3 app.py 
+screen -R deploy python3 app.py  # to hold the screen 
 
+
+# publicIP:5050  <<=== To access 
+
+ 
 
 
 
